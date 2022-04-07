@@ -21,7 +21,15 @@ Trabalho inicialmente realizado para a disciplina de Redes de Computadores, do c
 
 ## Executando a aplicação na máquina local
 * ### Servidor
+    * #### Utilizando o ambiente da IDE Codeblocks
+        ![img0](https://user-images.githubusercontent.com/56902784/162282811-909cf7c3-7df4-494e-af7a-3450f04085da.png)
+    * #### Utilizando linha de comando via terminal (Linux Ubuntu 18.04.6 LTS)
+      1. Em um terminal, navegue até o diretório onde está o programa;
+      2. Entre com o seguinte comando para compilar o(s) arquivos do programa: `g++ -o nomeExec arq1.cpp (arq2.cpp ... arqN.cpp)`
+      3. Em seguida, execute o arquivo .exe gerado com `./nomeExec`
 * ### Cliente
+    1. Após o programa servidor ter sido executado e estar escutando a porta determinada;
+    2. Execute `telnet localhost numPorta`, onde numPorta é a porta escolhida. Assim, é feita uma tentativa de conexo com o servidor em execução. Caso a mesma seja aceita pelo servidor, será possível realizar alguma ação, como por exemplo o envio de uma mensagem, a depender da implementação.
 
 
 ## Considerações
