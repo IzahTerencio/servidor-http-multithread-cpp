@@ -29,6 +29,7 @@ Trabalho inicialmente realizado para a disciplina de Redes de Computadores, do c
 
 ## Referências bibliográficas e Links Úteis
   * 
+  * COMANDOS Telnet. Disponível em: <[http://underpop.online.fr/w/windows/telnetw/comandos-telnet.htm](url)>. Acesso em: 4 de abr. de 2022.
   * DOCS for socket functions. **cplusplus.com**. Disponível em: <[http://cplusplus.com/forum/unices/82128/](url)>. Acesso em: 4 de abr. de 2022.
   * GUIA básico de Markdown. **PIPZ Academy**. Disponível em: <[https://docs.pipz.com/central-de-ajuda/learning-center/guia-basico-de-markdown#open](url)>. Acesso em: 4 de abr. de 2022.
   * HONG, K.  Multi-Threaded Programming Terminology - 2020. **BOGOTOBOGO**, 2020. Disponível em: <[https://www.bogotobogo.com/cplusplus/multithreaded.php](url)>. Acesso em: 4 de abr. de 2022.
@@ -37,3 +38,4 @@ Trabalho inicialmente realizado para a disciplina de Redes de Computadores, do c
   * NETINET/IN.H - Internet address family. **The Open Group Base Specifications Issue 7**. Disponível em: <[https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/netinet_in.h.html](url)>. Acesso em: 4 de abr. de 2022.
   * SOCKET(2). **Linux manual page**. Disponível em: <[https://man7.org/linux/man-pages/man2/socket.2.html](url)>. Acesso em: 4 de abr. de 2022.
   * SYS/SOCKET.H - main sockets header. **The Open Group Base Specifications Issue 7**. Disponível em: <[https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/sys_socket.h.html](url)>. Acesso em: 4 de abr. de 2022.
+  * TESTANDO a conectividade de porta com Telnet (2015980). **vmware Customer Connect**, 2013. Disponível em: <[https://kb.vmware.com/s/article/2015980?lang=pt_PT](url)>. Acesso em: 4 de abr. de 2022.
