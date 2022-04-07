@@ -1,9 +1,19 @@
 # depslib dependency file v1.0
-1649283961 source:/home/izabellaterencio/Documentos/servidor-http-cpp/main.cpp
+1649366498 source:/home/izabellaterencio/Documentos/servidor-http-cpp/main.cpp
 	<iostream>
 	<sys/types.h>
 	<sys/socket.h>
 	<netinet/in.h>
 	<unistd.h>
+	<string.h>
+	"httprequest.h"
+
+1649366207 source:/home/izabellaterencio/Documentos/servidor-http-cpp/httprequest.cpp
+	"httprequest.h"
+	<iostream>
+	<cstring>
+
+1649366208 /home/izabellaterencio/Documentos/servidor-http-cpp/httprequest.h
+	<iostream>
 	<string.h>
 

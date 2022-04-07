@@ -12,6 +12,7 @@
 #include <netinet/in.h>  // Para endereços de domínio da Internet
 #include <unistd.h>     // read() and write()
 #include <string.h>    // Para usar função bzero()
+#include "httprequest.h"
 
 #define PORT_NUMBER 8080
 
@@ -26,8 +27,6 @@ int main(){
     struct sockaddr_in serverAddr; // Endereço do servidor
     struct sockaddr_in clientAddr; // Endereço do cliente que se conectar ao servidor
 
-    // AF_LOCAL é definido pelo padrão POSIX para comunicação entre processos na mesma máquina
-    // AF_INET é definido para comunicação entre processos em diferentes máquinas
     socket_fd = socket(AF_INET, SOCK_STREAM, 0);
 
     if(socket_fd < 0){ // Quando a chamada ao socket falha, é retornado valor -1
@@ -59,25 +58,36 @@ int main(){
 
     clientLen = sizeof(clientAddr);
 
-    newSocket = accept(socket_fd, (struct sockaddr*) &clientAddr, &clientLen);
-    if(newSocket < 0){
-        cerr << "AVISO: Erro ao aceitar cliente";
-        exit(EXIT_FAILURE);
-    }
+    // O laço permite que vários clientes possam se conectar ao servidor
+    // sem que o mesmo feche após cada sessão
+    while(true){
+        newSocket = accept(socket_fd, (struct sockaddr*) &clientAddr, &clientLen);
+        if(newSocket < 0){
+            cerr << "AVISO: Erro ao aceitar cliente";
+            exit(EXIT_FAILURE);
+        }
 
-    bzero(readBuffer, 1024);
-    n = read(newSocket, readBuffer, 1024);
-    if(n < 0){
-        cerr << "ERRO ao ler do socket";
-        exit(EXIT_FAILURE);
-    }
-    printf("Here is the message: %s", readBuffer);
+        bzero(readBuffer, 1024);
+        n = read(newSocket, readBuffer, 1024);
+        if(n < 0){
+            cerr << "ERRO ao ler do socket";
+            exit(EXIT_FAILURE);
+        }
 
-    // Resposta do servidor
-    n = write(newSocket,"I got your message",18);
-    if(n < 0){
-        cerr << "ERRO ao escrever no socket";
-        exit(EXIT_FAILURE);
+        // Alocando a mensagem do cliente para processamento
+        string strTemp(readBuffer);
+        httpRequest r(strTemp);
+
+        //printf("Here is the message: %s", readBuffer);
+        //cout << "CLIENTE: " << readBuffer << endl;
+        cout << "CLIENTE: " << r.getFilePath() << endl;
+
+        // Resposta do servidor
+        n = write(newSocket,"Mensagem recebida com sucesso!",30);
+        if(n < 0){
+            cerr << "ERRO ao escrever no socket";
+            exit(EXIT_FAILURE);
+        }
     }
 
     return 0;
