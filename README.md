@@ -13,6 +13,7 @@ Trabalho inicialmente realizado para a disciplina de Redes de Computadores, do c
 
 ## A implementação
 * ### Parte 1 - Programa servidor
+    * Link: <[https://github.com/IzahTerencio/servidor-http-multithread-cpp/releases/tag/1](url)>.
 * ### Parte 2 - Processamento da requisição
 * ### Parte 3 - Manipulação de arquivos e diretórios
 * ### Parte 4 - _Multithreading_
